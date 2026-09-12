@@ -59,6 +59,12 @@ See the [validation baseline](validation-baseline.md) for the checks actually pe
 
 ## Run identity and artifacts
 
+Actual test producers can attach the versioned [execution record](execution.md)
+to an evidence manifest. `python tools/harness.py analyze --evidence PATH` checks
+required test execution without inventing certification measurements. The app
+runner remains responsible for producer identity, artifacts, protected storage,
+collection, and expiry; this evaluator alone does not qualify a product.
+
 Each actual run needs a unique ID; spec and app commit; catalog hash; exact tool/test/fixture/engine versions; scope; capability snapshot; run type; start/end times; logs; artifacts with hashes; failures; intervention count; and reviewer disposition. Use separate statuses for `planned`, `blocked`, `running`, `passed`, `failed`, and `invalid`. Synthetic evidence is explicitly labeled. Keep immutable originals and create a new run for a retry; do not overwrite a failed run with its successful retry.
 
 Use `harness/artifacts/<run-id>/` for local generated artifacts (gitignored), with the evidence manifest beside its referenced files. Retain shared evidence in an access-controlled artifact store under the selected retention policy. Source control contains synthetic fixtures and plans, never identifiable participant recordings or secrets. Hashes establish consistency, not trusted provenance; protected producer identity and release-wide aggregation remain integration work.
