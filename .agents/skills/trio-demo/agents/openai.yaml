@@ -1,0 +1,4 @@
+interface:
+  display_name: "Voice demo director"
+  short_description: "Trio: Voice demo director"
+  default_prompt: "Prepare and run the full recorded Trio demo with $trio-demo."

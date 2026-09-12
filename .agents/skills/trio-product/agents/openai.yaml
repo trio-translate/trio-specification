@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product conversation partner"
+  short_description: "Trio: Product conversation partner"
+  default_prompt: "Explore the next Trio product decision with $trio-product."

@@ -1,0 +1,402 @@
+{
+  "schema_version": 1,
+  "status": "planned",
+  "requirements": {
+    "FR-001": {
+      "family": "setup",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-002": {
+      "family": "participants",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-003": {
+      "family": "translation",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-004": {
+      "family": "stop",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-005": {
+      "family": "repair",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-006": {
+      "family": "presentation",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-007": {
+      "family": "recovery",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-008": {
+      "family": "privacy",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-009": {
+      "family": "billing",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-010": {
+      "family": "solo",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-011": {
+      "family": "group",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-012": {
+      "family": "remote",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-013": {
+      "family": "offline",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-014": {
+      "family": "driver",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-015": {
+      "family": "music",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-016": {
+      "family": "input-feedback",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-017": {
+      "family": "continuity",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-018": {
+      "family": "word-inactivity",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-019": {
+      "family": "recovery",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-020": {
+      "family": "content-origin",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-021": {
+      "family": "appearance",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-022": {
+      "family": "view-restoration",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-023": {
+      "family": "navigation",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "FR-024": {
+      "family": "capabilities",
+      "requirement_document": "spec/requirements/functional.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-001": {
+      "family": "stop",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-002": {
+      "family": "latency",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-003": {
+      "family": "state-integrity",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-004": {
+      "family": "resources",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-005": {
+      "family": "operations",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-006": {
+      "family": "economics",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-007": {
+      "family": "accessibility",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-008": {
+      "family": "diagnostics",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-009": {
+      "family": "offline",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-010": {
+      "family": "input-feedback",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-011": {
+      "family": "music",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-012": {
+      "family": "endurance",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-013": {
+      "family": "recovery",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-014": {
+      "family": "capabilities",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "QR-015": {
+      "family": "defect-closure",
+      "requirement_document": "spec/requirements/quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "LQ-001": {
+      "family": "meaning",
+      "requirement_document": "spec/requirements/language-and-ai-quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "LQ-002": {
+      "family": "content-origin",
+      "requirement_document": "spec/requirements/language-and-ai-quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "LQ-003": {
+      "family": "adversarial-input",
+      "requirement_document": "spec/requirements/language-and-ai-quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "LQ-004": {
+      "family": "language-coverage",
+      "requirement_document": "spec/requirements/language-and-ai-quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    },
+    "LQ-005": {
+      "family": "word-origin",
+      "requirement_document": "spec/requirements/language-and-ai-quality.md",
+      "procedure": "harness/verification.md",
+      "status": "planned"
+    }
+  },
+  "situations": [
+    {
+      "id": "SIT-001",
+      "document": "spec/situations/SIT-001-shared-device-conversation.md",
+      "status": "documented_draft",
+      "release_selected": false
+    },
+    {
+      "id": "SIT-002",
+      "document": "spec/situations/SIT-002-solo-understanding.md",
+      "status": "documented_draft",
+      "release_selected": false
+    },
+    {
+      "id": "SIT-003",
+      "document": "spec/situations/SIT-003-multilingual-group.md",
+      "status": "documented_draft",
+      "release_selected": false
+    },
+    {
+      "id": "SIT-004",
+      "document": "spec/situations/SIT-004-remote-conversation.md",
+      "status": "documented_draft",
+      "release_selected": false
+    },
+    {
+      "id": "SIT-005",
+      "document": null,
+      "status": "catalog_only",
+      "release_selected": false
+    },
+    {
+      "id": "SIT-006",
+      "document": null,
+      "status": "catalog_only",
+      "release_selected": false
+    },
+    {
+      "id": "SIT-007",
+      "document": null,
+      "status": "catalog_only",
+      "release_selected": false
+    },
+    {
+      "id": "SIT-008",
+      "document": null,
+      "status": "catalog_only",
+      "release_selected": false
+    },
+    {
+      "id": "SIT-009",
+      "document": null,
+      "status": "catalog_only",
+      "release_selected": false
+    },
+    {
+      "id": "SIT-010",
+      "document": null,
+      "status": "catalog_only",
+      "release_selected": false
+    },
+    {
+      "id": "SIT-011",
+      "document": null,
+      "status": "catalog_only",
+      "release_selected": false
+    },
+    {
+      "id": "SIT-012",
+      "document": null,
+      "status": "catalog_only",
+      "release_selected": false
+    },
+    {
+      "id": "SIT-013",
+      "document": null,
+      "status": "catalog_only",
+      "release_selected": false
+    },
+    {
+      "id": "SIT-014",
+      "document": "spec/situations/SIT-014-car-conversation.md",
+      "status": "documented_draft",
+      "release_selected": false
+    }
+  ],
+  "conditions": [
+    "COND-001",
+    "COND-002"
+  ],
+  "axes": {
+    "music_noise": [
+      "neither",
+      "music",
+      "noise",
+      "music_and_noise"
+    ],
+    "appearance": [
+      "light",
+      "dark",
+      "auto"
+    ],
+    "network": [
+      "offline_cold_start",
+      "online",
+      "loss_and_return"
+    ],
+    "audio_route": [
+      "phone_mic_speaker",
+      "wired",
+      "bluetooth"
+    ],
+    "lifecycle": [
+      "foreground",
+      "lock_background",
+      "return",
+      "cold_relaunch"
+    ],
+    "capability": [
+      "ready",
+      "absent",
+      "denied",
+      "resources_missing",
+      "changed"
+    ]
+  },
+  "limitations": [
+    "No release matrix selected",
+    "No executable app adapters",
+    "No physical or human evidence",
+    "Unapproved thresholds and sample policies"
+  ]
+}

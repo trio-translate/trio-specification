@@ -113,3 +113,19 @@ Exercise network loss/reconnect, provider connection rollover, timeout/error, lo
 For each fault, record time to detect, time to restore each capability, input/output gaps, ordering, duplicates, resource cost, and required user actions. If recovery is impossible, expose the unavailable capability and any lost interval rather than inventing delivery or successful recovery. Recoverable-fault budgets, bounded buffer limits, and backoff parameters are TBD; retaining an indefinitely broken "active" session does not pass.
 
 Distinguish explicit stop/end from temporary recovery so delayed work cannot restart a deliberately stopped session. Loss of power, revoked access, and OS termination are externally imposed events to test and report; routine platform behavior that violates the support promise requires a design or coverage change.
+
+## QR-014 — Verify capability accuracy and currency
+
+Status: Agreed direction; procedure Draft. Scope: Supported device/OS/engine combinations. Source: FR-024 and DEC-007.
+
+Acceptance: compare capability records with actual runtime probes and observed processing/routes. Test false-positive availability, missing/corrupt resources, permission/route changes, unsupported language directions, OS/engine updates and rollback. Re-run affected offline, privacy, music, cancellation and endurance evidence before renewing claims. Maintain dated official sources, affected versions, an owner and refresh triggers; vendor first-party features do not establish third-party API access. Unknown/stale support is not passing coverage.
+
+Dependencies: selected device inventory, [device contract](../technical/device-capabilities.md), [maintenance workflow](../../harness/README.md) and proposed CERT-016.
+
+## QR-015 — Reproducible verification and defect closure
+
+Status: Agreed quality ambition; release process Draft. Scope: Every advertised product outcome. Source: DEC-007.
+
+Acceptance: every release requirement has procedures, exact supported scope, agreed thresholds and passing appropriate evidence. Reproduce known defects with versioned fixtures, demonstrate the failing assertion where possible, fix and rerun affected cases. Preserve skipped/flaky/failed/inconclusive results as explicit gaps. Do not release an unresolved defect violating a required advertised outcome or claim all possible bugs absent from finite tests.
+
+Dependencies: [verification ladder](../../harness/verification.md), app test producers, physical device/human review, support matrix and protected release review. Repository structural checks and tests of the evaluator do not establish product acceptance.

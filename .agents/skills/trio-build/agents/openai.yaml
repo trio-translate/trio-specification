@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implementation builder"
+  short_description: "Trio: Implementation builder"
+  default_prompt: "Implement the selected Trio work packet with $trio-build."

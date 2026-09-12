@@ -2,7 +2,7 @@
 
 Status: Draft
 
-No application tests or user studies have been run for Trio. This is the plan for collecting acceptance evidence once a release scope is agreed.
+No application tests or user studies have been run for Trio. This is the plan for collecting acceptance evidence once a release scope is agreed. The [product harness](../../harness/README.md), [verification ladder](../../harness/verification.md), and [coverage registry](../../harness/coverage.json) now define the working process and machine-checkable planning inventory.
 
 ## Specification readiness
 
@@ -33,6 +33,8 @@ Unresolved numeric thresholds in [quality](../requirements/quality.md) and [lang
 | Participant content integrity | FR-020, LQ-002 | No app-copy insertion during streaming/faults/empty states; separate accessible status; genuine spoken "one moment" preserved | Rule agreed; implementation unverified |
 | Light/Dark/Auto | FR-021, QR-007 | Full screen/dialog coverage, system changes and explicit override, offline persistence, session continuity | Modes agreed; detailed behavior Draft |
 | Remembered view and navigation | FR-022, FR-023, FR-008, FR-016 | Offline relaunch/return, safe fallback, no dead ends, accessible back/close, no implicit capture/history restoration, active-session continuity | Outcomes agreed; detailed behavior Draft |
+| Device capabilities | FR-024, QR-014 | Runtime probes versus actual routes/resources; absent/denied/changed capabilities; selection, rollback and affected endurance | Direction agreed; adapters unimplemented |
+| Defect prevention and closure | QR-015 | Complete release requirement mapping, reproducible failures/fixes, appropriate physical/human evidence and explicit gaps | Process defined; app evidence absent |
 
 ## Verification layers
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verification and release evidence"
+  short_description: "Trio: Verification and release evidence"
+  default_prompt: "Assess Trio verification evidence and gaps with $trio-verify."

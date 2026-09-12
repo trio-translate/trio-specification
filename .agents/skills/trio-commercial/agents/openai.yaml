@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commercial and competitor analyst"
+  short_description: "Trio: Commercial and competitor analyst"
+  default_prompt: "Develop Trio commercialization evidence with $trio-commercial."

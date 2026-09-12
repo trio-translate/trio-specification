@@ -1,0 +1,4 @@
+interface:
+  display_name: "Specification editor"
+  short_description: "Trio: Specification editor"
+  default_prompt: "Develop the next Trio specification increment with $trio-specify."

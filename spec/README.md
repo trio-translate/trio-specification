@@ -25,15 +25,20 @@ This is the product's central specification. Each subject has one primary home; 
 | Requirements | [Quality requirements](requirements/quality.md) | Reliability, latency, cost, and operational properties |
 | Requirements | [Language and AI quality](requirements/language-and-ai-quality.md) | Meaning preservation, uncertainty, evaluation |
 | Technical | [Architecture](technical/architecture.md) | Logical boundaries, constraints, choices to evaluate |
+| Technical | [Device capabilities](technical/device-capabilities.md) | Native integration access, readiness, selection, currency and runtime verification |
 | Technical | [Data model](technical/data-model.md) | Entities, ownership, lifecycles |
 | Technical | [API and events](technical/api-and-events.md) | Contract requirements and event semantics |
 | Technical | [Security and privacy](technical/security-and-privacy.md) | Threats, controls, consent, data handling |
 | Business | [Business model](business/business-model.md) | Payer, packaging, unit economics, pricing experiments |
+| Business | [Commercialization](business/commercialization.md) | Customer evidence, paid pilot, economics and launch packet |
+| Business | [Competitor analysis](business/competitor-analysis.md) | Dated primary sources, fair comparisons and positioning hypotheses |
 | Business | [Go to market](business/go-to-market.md) | Recruitment, positioning, distribution experiments |
 | Business | [Analytics and success](business/analytics-and-success.md) | Definitions of value and measurable outcomes |
 | Research | [Research practice](research/README.md) | Evidence collection and interpretation |
 | Research | [Assumptions](research/assumptions.md) | Unvalidated beliefs and practical tests |
 | Delivery | [Validation and acceptance](delivery/validation-and-acceptance.md) | Scenario coverage and release evidence |
+| Harness | [Product harness](../harness/README.md) | Agents, skills, work loop, commands and execution boundaries |
+| Harness | [Conversation and recorded demos](../harness/conversation-and-demo.md) | Product partner, speaking actors, real app demos and recording evidence |
 | Delivery | [Scoring and internal certification](delivery/scoring-and-certification.md) | Hard gates, quality scores, evidence coverage, automation boundaries |
 | Delivery | [Release and operations](delivery/release-and-operations.md) | Delivery, support, rollout, incident handling |
 | Delivery | [Risks and open questions](delivery/risks-and-open-questions.md) | Decisions and uncertainties blocking progress |

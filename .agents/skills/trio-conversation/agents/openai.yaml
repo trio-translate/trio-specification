@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spoken conversation partner"
+  short_description: "Trio: Spoken conversation partner"
+  default_prompt: "Participate in the selected Trio conversation with $trio-conversation."

@@ -8,6 +8,8 @@ For the proposed family/couple audience, a household member may pay to make recu
 
 No price, conversion rate, willingness to pay, or market size has been validated.
 
+Use the [commercialization plan](commercialization.md) for paid-pilot stages and the [competitor analysis](competitor-analysis.md) for dated alternatives and fair comparison procedures.
+
 ## Packaging hypotheses
 
 | Model | Why it might fit | What could make it fail |

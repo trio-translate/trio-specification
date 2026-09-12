@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "application": {
+    "repository": null,
+    "commit": null
+  },
+  "scope": {
+    "situations": [],
+    "devices": [],
+    "language_pairs": [],
+    "audio_routes": [],
+    "fixture_revision": null,
+    "processing_revision": null
+  },
+  "adapters": {
+    "build": null,
+    "ui": null,
+    "device_audio": null,
+    "faults": null,
+    "telemetry": null,
+    "voice_partner": null,
+    "recorder": null
+  },
+  "recording": {
+    "purpose": null,
+    "consent_confirmed": false,
+    "storage_directory": null,
+    "retention_policy": null
+  },
+  "cost_limit": null
+}

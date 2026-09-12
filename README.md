@@ -32,4 +32,6 @@ This is a documentation repository with substantive starter drafts and reusable 
 
 An executable [evaluation prototype](certification/README.md) validates submitted test evidence and reports hard gates, provisional quality scores, and coverage. The rubric is Proposed; there is no app evidence or issued certificate. Its own automated tests exercise evaluation logic, not Trio's product behavior.
 
+The [product harness](harness/README.md) adds project agents and skills for product conversation, specification, building, verification, benchmarking, maintenance, commercialization and recorded voice demos. Run `python tools/harness.py check` with Python 3.11+ to validate the repository and tooling; `coverage` reports planned coverage and `preflight --mode demo` names missing runtime capabilities. App/device/voice/recording adapters are defined but not implemented. Start with the [agent roster](harness/agent-roster.md).
+
 **Current writing focus:** develop concrete situations and shared conditions while preserving the agreed non-negotiable experience. Choose the first audience/release separately from defining what the product must do well.

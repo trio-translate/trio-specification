@@ -1,0 +1,4 @@
+interface:
+  display_name: "Benchmark analyst"
+  short_description: "Trio: Benchmark analyst  "
+  default_prompt: "Plan or evaluate a controlled Trio comparison with $trio-benchmark."

@@ -233,3 +233,13 @@ Provide an understandable back/close action from secondary views and a stable ma
 Acceptance: traverse every screen and overlay, including direct links, empty history, restored views, errors, and unavailable destinations. Back/close returns to a usable prior or main view without loops or dead ends. Routine in-app navigation preserves the active session, microphone/stop visibility, content ownership, and word timer; it does not silently end capture or create participant text. Leaving the app follows its separately tested background policy.
 
 Dependencies: [navigation design](../experience/interaction-design.md#navigation-and-view-restoration), explicit stop/end semantics, accessibility and view-state inventory. Destructive actions require their own deliberate controls and are not hidden in ordinary Back behavior.
+
+## FR-024 — Discover and exercise device capabilities
+
+Status: Agreed architectural outcome; contract details Draft. Scope: Every supported device/platform. Source: DEC-007.
+
+Allow useful device capabilities to be integrated and exercised through appropriate adapters, even when another path is normally selected. Distinguish API/hardware presence, permissions, installed language resources, runtime readiness, selected path and verified situation support. Keep knowledge current as device software and resources change.
+
+Acceptance: demonstrate a present and absent capability, permitted/denied use, missing resources, both selected and deliberately non-selected eligible paths, and a runtime change. Verify actual input/output and processing availability instead of a device-name assumption. Preserve session intent, word timeout, music suppression, privacy and offline requirements through selection and recovery. Unsupported paths are explicit; an implementation abstraction cannot permanently prevent required native integration.
+
+Dependencies: [capability contract](../technical/device-capabilities.md), platform/API choices, actual device lab, QR-014 and participant-level recovery. No platform or release inventory is selected by this requirement.

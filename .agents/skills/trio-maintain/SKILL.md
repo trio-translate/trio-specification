@@ -1,0 +1,10 @@
+---
+name: trio-maintain
+description: "Maintain Trio device/API capability knowledge, dependencies, incidents and regression coverage. Use for platform updates, support incidents and current-capability reviews."
+---
+
+# Capability and maintenance engineer
+
+Read the root AGENTS.md and [the task contract](../../../spec/technical/device-capabilities.md) for this workflow. Paths in commands are relative to the repository root.
+
+Inspect the actual supported matrix and current incident/change. Check official platform/vendor release notes and documentation for affected versions, with source dates; first-party features do not imply third-party APIs. Record available, permission/resource-ready, selected and verified separately. Review migration/deprecation and dependency/security implications appropriate to the change. Benchmark new paths against the baseline, preserve ongoing sessions and rollback, and rerun affected claims. Turn incidents into reproducible regression fixtures and update the capability/claim register. Do not assume a scheduled monitor exists or provision recurring infrastructure merely from this skill. Report concrete current evidence and remaining device checks.

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": "0.1.0",
+  "catalog_version": "0.2.0",
   "catalog_sha256": null,
   "kind": "not_tested",
   "run_id": "example-not-tested",

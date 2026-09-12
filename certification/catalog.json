@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": "0.1.0",
+  "catalog_version": "0.2.0",
   "policy_status": "proposed",
   "minimum_score": null,
   "profiles": {
@@ -407,6 +407,19 @@
         "music_delivery_paused"
       ],
       "unit": "required_driver_screen_interactions",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-016",
+      "title": "Device capability records match usable and selected paths",
+      "requirements": ["FR-024", "QR-014"],
+      "profiles": ["core"],
+      "kind": "gate",
+      "methods": ["device"],
+      "cases": ["capability_present_and_absent", "permission_denied_and_revoked", "missing_or_corrupt_resources", "selected_and_nonselected_paths", "false_positive_probe", "runtime_route_or_engine_change", "offline_privacy_preserved", "session_and_stop_preserved"],
+      "unit": "violations",
       "operator": "eq",
       "threshold": 0,
       "min_samples": 1

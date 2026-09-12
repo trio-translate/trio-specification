@@ -8,6 +8,8 @@ This is a logical design brief. No programming language, framework, cloud, provi
 
 Begin with [release scope](../scope-and-roadmap.md), [functional requirements](../requirements/functional.md), [quality budgets](../requirements/quality.md), and the [security/privacy model](security-and-privacy.md). Reuse existing implementation only after checking its suitability against Trio's agreed requirements.
 
+Follow the [device capability contract](device-capabilities.md): retain integration paths for useful native capabilities, distinguish readiness from selection and verified support, and refresh on relevant platform/resource changes. Use the [product harness](../../harness/README.md) and explicit app adapters to implement and verify the chosen architecture.
+
 ## Proposed responsibilities
 
 | Boundary | Responsibilities |

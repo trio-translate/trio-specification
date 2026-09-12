@@ -1,0 +1,4 @@
+interface:
+  display_name: "Capability and maintenance engineer"
+  short_description: "Trio: Capability and maintenance engineer"
+  default_prompt: "Review Trio capability or maintenance changes with $trio-maintain."

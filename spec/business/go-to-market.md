@@ -17,6 +17,8 @@ This positioning follows the proposed initial audience. Revise it if [audience r
 
 These are proposed experiments, not authorization to contact people, publish campaigns, or spend money.
 
+The [demo harness](../../harness/conversation-and-demo.md) defines how to produce a complete spoken, recorded demonstration; the [commercialization plan](commercialization.md) connects it to pilot and launch evidence. An AI actor is a demo participant, not a recruited customer or evidence of willingness to pay.
+
 ## Experiment record
 
 For each channel, record target segment, message, offer, recruitment method, effort/cost, eligible participants, activation, repeat use, paid conversion, and support burden. Keep denominators and the observation window explicit. Compare acquired customers and successful situations, not only traffic or installs.

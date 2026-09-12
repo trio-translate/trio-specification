@@ -32,6 +32,8 @@ The second command intentionally exits **2** and reports `INCOMPLETE`: no app ha
 
 The proposed score weights total 100. Target/poor boundaries, the overall required score, and some sample policies are null because they have not been agreed. The operational gate fixtures/minimum counts are also a draft test design. Do not change `policy_status` to `approved` until the product owner approves the concrete rubric and scope; protected approval enforcement is future work.
 
+Catalog 0.2.0 adds CERT-016 for device capability readiness and selection. There are 21 checks in the offline-car profile, including inherited core checks. The [harness coverage report](../harness/README.md) also lists requirements still lacking certification checks; a complete planning map does not make this starter rubric exhaustive.
+
 ## Evidence manifest
 
 Start from [not-tested.json](evidence/not-tested.json). Set a unique run ID, exact catalog version, `catalog_sha256` using `tools.certify.scope_hash(catalog)`, and `kind` (`measured`, `synthetic`, or `not_tested`). Fill every scope field: profile, app build, processing revision, physical device/OS, two languages, actual route, conditions, power configuration, and fixture revision. Spell out both translation directions in the fixtures; a language pair alone is not evidence that both passed. A catalog hash mismatch blocks readiness even if its version label is unchanged.
