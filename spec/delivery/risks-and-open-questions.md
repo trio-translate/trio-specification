@@ -21,6 +21,8 @@ Status: Draft
 | Q-013 | What duration and qualifying-word policy govern inactivity, including uncertain/unavailable recognition? | Product + engineering + language reviewers | Session acceptance | Word-based timeout agreed; duration and detailed policy TBD |
 | Q-014 | What devices, power conditions, background behavior, and budgets sustain twelve hours after one start? | Engineering + product | Platform selection and endurance acceptance | Required outcome; no endurance measurements |
 | Q-015 | What fallback and bounded-buffer rules preserve each participant's outcome automatically? | Product + engineering | Recovery acceptance | No routine manual restart or false delivery; detailed contracts/budgets open |
+| Q-016 | What thresholds, sample sizes, fixtures, and supported matrix define certification readiness? | Product + engineering + reviewers | Rubric approval | Proposed catalog; hard gates separate from score; quality thresholds/sample policies incomplete |
+| Q-017 | Which trusted app test producers and human reviewers will supply verifiable evidence? | Engineering + release owner | Certificate issuance | Evaluator prototype exists; app adapters, signed provenance, matrix aggregation, and issuance are not implemented |
 
 ## Material risks
 

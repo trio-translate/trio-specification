@@ -1,0 +1,539 @@
+{
+  "schema_version": 1,
+  "catalog_version": "0.1.0",
+  "policy_status": "proposed",
+  "minimum_score": null,
+  "profiles": {
+    "core": {
+      "extends": []
+    },
+    "offline_car": {
+      "extends": [
+        "core"
+      ]
+    }
+  },
+  "checks": [
+    {
+      "id": "CERT-001",
+      "title": "Twelve real hours of useful operation",
+      "requirements": [
+        "FR-017",
+        "QR-012"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "gate",
+      "methods": [
+        "device"
+      ],
+      "cases": [
+        "fresh_bilingual_exchange",
+        "lock_and_background",
+        "cross_twelve_hour_boundary"
+      ],
+      "unit": "seconds",
+      "operator": "gte",
+      "threshold": 43200,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-002",
+      "title": "No required phone intervention after start",
+      "requirements": [
+        "FR-017",
+        "QR-012"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "gate",
+      "methods": [
+        "device"
+      ],
+      "cases": [
+        "twelve_hour_run"
+      ],
+      "unit": "required_interactions",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-003",
+      "title": "No unexpected logical session ends",
+      "requirements": [
+        "FR-017",
+        "FR-019"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "gate",
+      "methods": [
+        "device"
+      ],
+      "cases": [
+        "component_rollover",
+        "network_change",
+        "ordinary_navigation",
+        "resource_pressure"
+      ],
+      "unit": "violations",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-004",
+      "title": "Word inactivity obeys the agreed policy",
+      "requirements": [
+        "FR-018",
+        "LQ-005"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "gate",
+      "methods": [
+        "integration"
+      ],
+      "cases": [
+        "quiet_words",
+        "noise_only",
+        "duplicate_words",
+        "tts_echo",
+        "lyrics",
+        "observer_unavailable",
+        "timeout_boundary"
+      ],
+      "unit": "violations",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-005",
+      "title": "Participant content never contains app copy",
+      "requirements": [
+        "FR-020",
+        "LQ-002"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "gate",
+      "methods": [
+        "ui"
+      ],
+      "cases": [
+        "waiting",
+        "error",
+        "reconnect",
+        "empty_field",
+        "streaming",
+        "copy_and_playback",
+        "genuine_one_moment",
+        "accessible_regions"
+      ],
+      "unit": "violations",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-006",
+      "title": "Stop cancels capture and all obsolete output",
+      "requirements": [
+        "FR-004",
+        "QR-001"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "gate",
+      "methods": [
+        "device"
+      ],
+      "cases": [
+        "capture",
+        "processing",
+        "playback",
+        "network_loss",
+        "late_response"
+      ],
+      "unit": "violations",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-007",
+      "title": "Microphone state is truthful on every app screen",
+      "requirements": [
+        "FR-016",
+        "QR-010"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "gate",
+      "methods": [
+        "device"
+      ],
+      "cases": [
+        "screen_inventory",
+        "active_levels",
+        "active_silence",
+        "stopped",
+        "permission_denied",
+        "route_change"
+      ],
+      "unit": "violations",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-008",
+      "title": "Music mutes TTS without ending translation",
+      "requirements": [
+        "FR-015",
+        "QR-011"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "gate",
+      "methods": [
+        "device"
+      ],
+      "cases": [
+        "speaker",
+        "earphones",
+        "queued_output",
+        "text_continues",
+        "external_music",
+        "mixed_noise",
+        "state_transitions"
+      ],
+      "unit": "violations",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-009",
+      "title": "Recovery restores recipient capabilities automatically",
+      "requirements": [
+        "FR-007",
+        "FR-019",
+        "QR-013"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "gate",
+      "methods": [
+        "device"
+      ],
+      "cases": [
+        "recognizer_restart",
+        "network_return",
+        "audio_route_return",
+        "no_silent_loss",
+        "no_false_delivery",
+        "no_stale_backlog"
+      ],
+      "unit": "violations",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-010",
+      "title": "Privacy and entitlement boundaries hold",
+      "requirements": [
+        "FR-008",
+        "FR-009",
+        "QR-008"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "gate",
+      "methods": [
+        "integration"
+      ],
+      "cases": [
+        "no_hidden_capture",
+        "content_free_logs",
+        "retention_policy",
+        "no_unapproved_upload",
+        "session_isolation",
+        "sufficient_session_entitlement"
+      ],
+      "unit": "violations",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-011",
+      "title": "Light Dark Auto work without session interruption",
+      "requirements": [
+        "FR-021",
+        "QR-007"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "gate",
+      "methods": [
+        "ui"
+      ],
+      "cases": [
+        "light",
+        "dark",
+        "auto_system_change",
+        "explicit_override",
+        "offline_relaunch",
+        "session_preserved",
+        "screen_inventory"
+      ],
+      "unit": "violations",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-012",
+      "title": "Last view restores and every view has a way back",
+      "requirements": [
+        "FR-022",
+        "FR-023"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "gate",
+      "methods": [
+        "ui"
+      ],
+      "cases": [
+        "offline_relaunch",
+        "direct_entry",
+        "invalid_destination",
+        "overlay_back",
+        "no_capture_restart",
+        "no_history_resurrection",
+        "active_session_navigation"
+      ],
+      "unit": "violations",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-013",
+      "title": "No critical meaning errors in the reviewed fixture set",
+      "requirements": [
+        "LQ-001",
+        "LQ-004"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "gate",
+      "methods": [
+        "human"
+      ],
+      "cases": [
+        "both_directions",
+        "names_numbers_negation",
+        "accents",
+        "overlap_and_clipping",
+        "repair"
+      ],
+      "unit": "violations",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": null
+    },
+    {
+      "id": "CERT-014",
+      "title": "Entire car conversation works offline",
+      "requirements": [
+        "FR-013",
+        "QR-009"
+      ],
+      "profiles": [
+        "offline_car"
+      ],
+      "kind": "gate",
+      "methods": [
+        "device"
+      ],
+      "cases": [
+        "blocked_network_cold_start",
+        "fresh_recognition",
+        "both_translation_directions",
+        "local_tts",
+        "correction",
+        "offline_entitlement"
+      ],
+      "unit": "violations",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-015",
+      "title": "Driver never needs to read or operate the screen",
+      "requirements": [
+        "FR-014"
+      ],
+      "profiles": [
+        "offline_car"
+      ],
+      "kind": "gate",
+      "methods": [
+        "device"
+      ],
+      "cases": [
+        "driver_listens",
+        "driver_replies",
+        "music_delivery_paused"
+      ],
+      "unit": "required_driver_screen_interactions",
+      "operator": "eq",
+      "threshold": 0,
+      "min_samples": 1
+    },
+    {
+      "id": "CERT-101",
+      "title": "Language meaning quality",
+      "requirements": [
+        "LQ-001",
+        "LQ-004"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "score",
+      "methods": [
+        "human"
+      ],
+      "cases": [
+        "both_directions",
+        "representative_fixture_set"
+      ],
+      "unit": "review_score",
+      "direction": "higher",
+      "weight": 40,
+      "poor": null,
+      "target": null,
+      "min_samples": null
+    },
+    {
+      "id": "CERT-102",
+      "title": "Translation delay at the 95th percentile",
+      "requirements": [
+        "QR-002"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "score",
+      "methods": [
+        "device"
+      ],
+      "cases": [
+        "both_directions",
+        "representative_network_and_lengths"
+      ],
+      "unit": "milliseconds",
+      "direction": "lower",
+      "weight": 20,
+      "poor": null,
+      "target": null,
+      "min_samples": null
+    },
+    {
+      "id": "CERT-103",
+      "title": "Capability recovery delay at the 95th percentile",
+      "requirements": [
+        "QR-013"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "score",
+      "methods": [
+        "device"
+      ],
+      "cases": [
+        "fault_matrix"
+      ],
+      "unit": "milliseconds",
+      "direction": "lower",
+      "weight": 20,
+      "poor": null,
+      "target": null,
+      "min_samples": null
+    },
+    {
+      "id": "CERT-104",
+      "title": "Accessibility and task usability",
+      "requirements": [
+        "QR-007"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "score",
+      "methods": [
+        "human"
+      ],
+      "cases": [
+        "assistive_journey",
+        "both_appearances",
+        "both_participant_roles"
+      ],
+      "unit": "review_score",
+      "direction": "higher",
+      "weight": 10,
+      "poor": null,
+      "target": null,
+      "min_samples": null
+    },
+    {
+      "id": "CERT-105",
+      "title": "Resource efficiency over the endurance run",
+      "requirements": [
+        "QR-004",
+        "QR-006"
+      ],
+      "profiles": [
+        "core"
+      ],
+      "kind": "score",
+      "methods": [
+        "device"
+      ],
+      "cases": [
+        "memory",
+        "thermal",
+        "power",
+        "processing_cost"
+      ],
+      "unit": "profile_budget_ratio",
+      "direction": "lower",
+      "weight": 10,
+      "poor": null,
+      "target": null,
+      "min_samples": null
+    }
+  ]
+}

@@ -32,6 +32,9 @@ Explore remote and hybrid conversations, visual text, contextual explanations, l
 | One-action continuous conversation | Required core behavior | Twelve-hour unattended endurance; internal renewal/recovery needs no routine restart |
 | Word-based inactivity timeout | Required core behavior | Duration and word-event policy open; noise level is not the trigger |
 | Music policy and persistent microphone feedback | Required shared behavior | All TTS muted by default during music; actual mic status on every app-owned screen |
+| Participant text integrity | Required shared behavior | No app-authored prose in participant content areas, including temporary status with icons |
+| Light/Dark/Auto appearance | Required shared behavior | All app-owned views; active session preserved during changes |
+| Remembered view and a way back | Required shared behavior | Restore an applicable view without restarting capture; no navigation dead ends |
 | Text alternative and stop/recovery controls | Candidate launch | Needed for a usable conversation |
 | Payment and entitlements | Commercial pilot decision | Must match the agreed paid offer before charging |
 | Solo, own-device pair, group, remote | Future candidates | Require separate journeys and verification |

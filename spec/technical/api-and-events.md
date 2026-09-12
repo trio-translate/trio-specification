@@ -37,6 +37,8 @@ An operation/connection timeout is not a user-session timeout. Only the predefin
 
 Do not expose provider credentials, internal prompts, stack traces, or private conversation content in general error responses.
 
+Keep app status/error codes and localized app copy in typed fields distinct from participant source/translation payloads. A processing failure must not return "One moment" or an error description as if it were translated participant text. UI, accessible reading, copying, and playback must preserve this distinction; matching phrases genuinely spoken by a participant remain valid content.
+
 ## Before implementation
 
 Choose transport and define concrete request/response/event schemas, authentication/authorization, payload and rate limits, deadlines, backpressure, idempotency-key lifetime, cancellation races, compatibility, and examples for successful and failed flows. Publish machine-readable contracts only after these choices are made. Verify contracts against the actual service rather than treating an example payload as implemented behavior.

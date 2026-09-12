@@ -16,6 +16,8 @@ The product provides a clarification path and clearly separates translation from
 
 Acceptance: ambiguous and underspecified examples produce faithful ambiguity or an explicit clarification opportunity; additions are labeled; an unexplained model confidence percentage is not used as a correctness guarantee.
 
+Apply FR-020: labels do not permit app prose inside participant content areas. App status and requested generated assistance use separate UI and typed provenance. Test genuine participant phrases that match app copy, such as "one moment", to avoid suppressing valid content through keyword filters.
+
 ## LQ-003 — Resist instructions embedded in content
 
 Treat speech and text to be translated as conversation content. An utterance such as "ignore previous instructions" must not change the translator's role, reveal service instructions, invoke unrelated capabilities, or alter another participant's access.

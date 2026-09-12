@@ -9,7 +9,7 @@ This is the product's central specification. Each subject has one primary home; 
 | Area | Document | Defines |
 | --- | --- | --- |
 | Foundation | [Vision](vision.md) | Purpose, long-term ambition, intended outcomes |
-| Foundation | [Non-negotiable behavior](non-negotiables.md) | One-action continuous sessions, twelve-hour endurance, word-based timeout, honest recovery |
+| Foundation | [Non-negotiable behavior](non-negotiables.md) | Continuous sessions, word-based timeout, honest recovery, participant text integrity |
 | Foundation | [Audience and problem](audience-and-problem.md) | First customer hypothesis, jobs, alternatives, evidence needed |
 | Foundation | [Principles](principles.md) | Rules for product tradeoffs |
 | Foundation | [Scope and roadmap](scope-and-roadmap.md) | Candidate launch boundary, later horizons, progression gates |
@@ -17,7 +17,7 @@ This is the product's central specification. Each subject has one primary home; 
 | Situations | [Situation catalog](situations/README.md) | Real-world contexts and their priorities |
 | Conditions | [Reusable conditions](conditions/README.md) | Music, noise, and rules for combining them with situations |
 | Experience | [User journeys](experience/user-journeys.md) | End-to-end flows and recovery |
-| Experience | [Interaction design](experience/interaction-design.md) | Session states, controls, conversation behavior |
+| Experience | [Interaction design](experience/interaction-design.md) | Session states, participant/status separation, appearance, remembered views and navigation |
 | Experience | [Continuous operation and recovery](experience/recovery.md) | Fault handling, capability loss, automatic recovery, and word-activity uncertainty |
 | Experience | [Accessibility and localization](experience/accessibility-and-localization.md) | Participation across abilities, languages, and devices |
 | Requirements | [Requirements guide](requirements/README.md) | IDs, priority, traceability, writing standard |
@@ -34,6 +34,7 @@ This is the product's central specification. Each subject has one primary home; 
 | Research | [Research practice](research/README.md) | Evidence collection and interpretation |
 | Research | [Assumptions](research/assumptions.md) | Unvalidated beliefs and practical tests |
 | Delivery | [Validation and acceptance](delivery/validation-and-acceptance.md) | Scenario coverage and release evidence |
+| Delivery | [Scoring and internal certification](delivery/scoring-and-certification.md) | Hard gates, quality scores, evidence coverage, automation boundaries |
 | Delivery | [Release and operations](delivery/release-and-operations.md) | Delivery, support, rollout, incident handling |
 | Delivery | [Risks and open questions](delivery/risks-and-open-questions.md) | Decisions and uncertainties blocking progress |
 | Decisions | [Decision log](decisions/README.md) | Accepted and proposed choices with rationale |

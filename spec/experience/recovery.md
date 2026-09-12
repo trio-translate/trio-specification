@@ -4,6 +4,8 @@ Status: Draft mechanisms under the agreed [non-negotiable outcomes](../non-negot
 
 Recovery must preserve the user's active session and the relevant participant's ability to understand. A surviving process, unchanged screen, or spinning microphone animation alone does not meet this requirement.
 
+All recovery messages belong in the separate app-status region defined by FR-020. Never replace transcript or translation text with "One moment", "Reconnecting", or an error explanation, even with an icon. Preserve existing content or leave missing output empty while reporting its state separately.
+
 ## Proposed recovery matrix
 
 | Event | Automatic behavior to design and verify | What must be visible / preserved |

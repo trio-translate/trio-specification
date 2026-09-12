@@ -2,7 +2,7 @@
 
 Status: Draft
 
-Entries are Draft unless noted. Confirmed product constraints come from [DEC-002](../decisions/DEC-002-car-music-and-input-feedback.md) and [DEC-003](../decisions/DEC-003-continuous-one-action-sessions.md); proposed mechanisms and detailed acceptance criteria remain subject to design and verification. Candidate launch refers to the proposed SIT-001 release in [scope](../scope-and-roadmap.md). An agreed outcome does not settle its release date.
+Entries are Draft unless noted. Confirmed constraints are recorded in the [decision log](../decisions/README.md); proposed mechanisms and detailed acceptance criteria remain subject to design and verification. Candidate launch refers to the proposed SIT-001 release in [scope](../scope-and-roadmap.md). An agreed outcome does not settle its release date.
 
 ## FR-001 — Start and configure a conversation
 
@@ -28,7 +28,7 @@ Dependencies: automatic utterance handling, device lifecycle behavior, consent p
 
 Scope: Candidate launch. Source: SIT-001.
 
-Each accepted turn produces linked source text and target text with participant, language, processing, and revision state. Supported speech output can be deliberately played and stopped.
+Each accepted turn produces linked source text and target text with participant, language, processing, and revision state carried in separate metadata/status UI. Source/translation text contains only participant-derived content under FR-020. Supported speech output can be deliberately played and stopped.
 
 Acceptance: provisional text is distinguishable from final output; a failed turn offers a clear next action; out-of-order results attach to their own turns; a result never appears as another participant's words; text remains readable without audio.
 
@@ -191,3 +191,45 @@ Maintain logical session intent and automatically recover from recoverable servi
 Acceptance: injected faults do not require a routine restart, silently discard speech, report undelivered results as delivered, or replay stale speech. Retrying and provider-session rollover preserve ordering, cancellation, attribution, and allowance semantics. A text fallback cannot be counted as successful driver delivery; input-level feedback cannot stand in for recognition. Record unrecoverable gaps, requested exceptional actions, and external platform termination honestly.
 
 Dependencies: [non-negotiables](../non-negotiables.md), a concrete recovery matrix, bounded buffering/retry, output/privacy routing, QR-013. Keeping a session flag active while its useful capabilities are indefinitely unavailable does not pass graceful recovery acceptance.
+
+## FR-020 — Keep app-authored text out of participant content
+
+Status: Agreed outcome; rendering/data mechanisms Draft. Scope: All supported modes, locales, and participant content surfaces. Source: DEC-004.
+
+Reserve participant input, transcripts, translations, captions, and conversation-message bodies for content derived from participants. Put app status, waiting/error messages, guidance, and generated assistance in structurally separate UI. Icons, colors, prefixes, or temporarily placing text in a participant area do not satisfy this rule.
+
+Acceptance: inject recognition/translation delays, reconnects, empty input, no detected words, music-muted output, errors, correction, and session end. At no point may app copy such as "One moment" appear in participant fields or as a conversation turn, enter source/translation payloads, or be copied, retained, summarized, searched, replayed, or used as participant context. Missing output may remain empty while separate status explains it. Preserve valid earlier content without implying it belongs to the pending turn.
+
+Verify visual structure and accessible reading in both appearances and supported locales, including streaming updates and app-owned dialogs. App-status announcements are separate from participant transcript reading. As a positive control, genuinely spoken/typed "one moment" remains valid participant content; implement origin separation rather than phrase suppression.
+
+Dependencies: [interaction placement rules](../experience/interaction-design.md#participant-content-and-app-status), typed content/status provenance, LQ-002, accessibility review, and future output/export paths. Generated reply adoption, if supported, requires a deliberate user action before it becomes chosen participant content.
+
+## FR-021 — Support Light, Dark, and Auto appearance
+
+Status: Agreed three-mode support; Auto/default/persistence details Draft. Scope: All Trio-owned screens and modes. Source: DEC-005.
+
+Offer Light, Dark, and Auto. Working behavior: Auto follows the system appearance, explicit Light/Dark overrides it, and the choice is remembered locally without an account or network. The initial default and unavailable-system-preference fallback remain proposed design choices.
+
+Acceptance: switch all three modes, change the system appearance while Auto is selected, verify explicit modes resist system changes, and relaunch offline with a saved selection. Changes affect all app-owned screens/dialogs and preserve readable content, status separation, stop controls, and the microphone indicator. During an active speech/translation session, preserve focus, drafts, scroll, capture/playback, session identity, and the word-inactivity clock without a restart or another permission prompt.
+
+Dependencies: [appearance contract](../experience/interaction-design.md#appearance-modes), QR-007 accessibility criteria, supported-platform appearance signals and local preference storage. Visual palette and implementation remain unselected.
+
+## FR-022 — Remember the last view
+
+Status: Agreed outcome; restoration details Draft. Scope: All supported app modes. Source: DEC-006.
+
+Remember the last applicable view and restore it on return/relaunch, including offline. Proposed baseline: persist durable navigation preference locally; do not persist a transient permission/error dialog as the destination.
+
+Acceptance: visit each supported view, navigate away from the app, return, and cold-relaunch offline. Restore the expected view and a usable way back. If the destination is unavailable or unauthorized, fall back to the main conversation/home view with separate app-status explanation where useful. Restoring a view must not start microphone capture, recreate deleted/transient conversation content, rejoin an ended room, or undo an explicit stop.
+
+Dependencies: view inventory and durable-view policy, local preference storage, FR-008, FR-016, FR-023. Cross-device sync and restoration of private drafts/history are separate decisions.
+
+## FR-023 — Always provide a way back
+
+Status: Agreed outcome; navigation mechanisms Draft. Scope: Every Trio-controlled screen, dialog, overlay, and full-screen mode. Source: DEC-006.
+
+Provide an understandable back/close action from secondary views and a stable main conversation/home route for entry without history. The route must be discoverable and operable with supported touch, keyboard, and assistive inputs; an undisclosed gesture alone is insufficient.
+
+Acceptance: traverse every screen and overlay, including direct links, empty history, restored views, errors, and unavailable destinations. Back/close returns to a usable prior or main view without loops or dead ends. Routine in-app navigation preserves the active session, microphone/stop visibility, content ownership, and word timer; it does not silently end capture or create participant text. Leaving the app follows its separately tested background policy.
+
+Dependencies: [navigation design](../experience/interaction-design.md#navigation-and-view-restoration), explicit stop/end semantics, accessibility and view-state inventory. Destructive actions require their own deliberate controls and are not hidden in ordinary Back behavior.

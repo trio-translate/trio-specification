@@ -1,7 +1,7 @@
 # Non-negotiable product behavior
 
 Status: Agreed for the core outcomes below; detailed mechanisms and thresholds remain Draft
-Sources: [DEC-002](decisions/DEC-002-car-music-and-input-feedback.md), [DEC-003](decisions/DEC-003-continuous-one-action-sessions.md)
+Sources: [DEC-002](decisions/DEC-002-car-music-and-input-feedback.md), [DEC-003](decisions/DEC-003-continuous-one-action-sessions.md), [DEC-004](decisions/DEC-004-separate-app-text-from-participant-content.md)
 
 ## One action, then continuous use
 
@@ -33,6 +33,14 @@ Graceful means assessing the consequence for each participant. Text may be a use
 
 Do not silently discard undelivered content, switch private headset speech to a public speaker, change online/offline privacy behavior, or replay a long backlog after recovery. Define bounded processing, explicit gap handling, and preconfigured safe fallback choices. Detailed recovery mechanisms are proposals until evaluated.
 
+## Participant words never become app status
+
+Text areas reserved for participant input, transcripts, translations, captions, or conversation messages contain only participant-derived content. Never insert "One moment", "Listening", "Reconnecting", "No speech detected", or other app-authored copy there, even temporarily or with an icon, color, or app label. Put status, errors, and guidance in a separate app-status/control area outside the participant text area.
+
+During waiting or recovery, preserve valid content where appropriate or leave missing content empty. Do not overwrite words with a status sentence, append one to a translation, or create a fake conversation turn. App text must also remain separate in accessible reading, copying, history, translation context, and conversation playback. Requested explanations and suggested replies need a separate assistant area; they are not words the person has already said.
+
+This is an origin and placement rule. If a participant actually says "one moment", it is valid participant content and must remain eligible for normal transcription and translation. FR-020 defines acceptance cases.
+
 ## Physical and platform boundaries
 
 The app cannot continue capture through loss of device power, hardware failure, revoked microphone permission, or an OS that terminates its process. These are externally imposed limitations that must be exposed and verified, never represented as a supported uninterrupted experience. A platform/configuration that routinely stops unattended sessions does not meet the promise and must be fixed or excluded from supported coverage.
@@ -43,4 +51,4 @@ Define power/battery conditions for the 12-hour acceptance test and publish real
 
 These are requirements, not claims of completed implementation. A release claiming these situations must demonstrate one-action operation, full-duration endurance, word-based timeout behavior, and recovery under representative faults. A manual restart workaround or a weaker automatic timeout does not pass.
 
-Traceability: FR-017 through FR-019, QR-012/QR-013, and [validation and acceptance](delivery/validation-and-acceptance.md).
+Traceability: FR-017 through FR-020, QR-012/QR-013, and [validation and acceptance](delivery/validation-and-acceptance.md).

@@ -30,6 +30,9 @@ Unresolved numeric thresholds in [quality](../requirements/quality.md) and [lang
 | Continuous one-action use | FR-017, QR-012 | Twelve real hours of useful exchange with one start and zero routine interventions; no cutoff at twelve hours | Required outcome; no endurance run performed |
 | Word-based inactivity | FR-018, LQ-005, QR-012, QR-013 | Word/noise/lyrics/TTS cases, duplicate events, unknown recognition, precise timeout boundary | Duration and detailed counting policy open |
 | Recovery under faults | FR-007, FR-019, QR-013 | Automatic connection/engine/route recovery; participant-level outcomes, gaps, cancellation, no false delivery | Recovery mechanisms/budgets open |
+| Participant content integrity | FR-020, LQ-002 | No app-copy insertion during streaming/faults/empty states; separate accessible status; genuine spoken "one moment" preserved | Rule agreed; implementation unverified |
+| Light/Dark/Auto | FR-021, QR-007 | Full screen/dialog coverage, system changes and explicit override, offline persistence, session continuity | Modes agreed; detailed behavior Draft |
+| Remembered view and navigation | FR-022, FR-023, FR-008, FR-016 | Offline relaunch/return, safe fallback, no dead ends, accessible back/close, no implicit capture/history restoration, active-session continuity | Outcomes agreed; detailed behavior Draft |
 
 ## Verification layers
 
@@ -59,3 +62,5 @@ For endurance evidence add actual elapsed duration, power/battery conditions, ba
 All requirements designated must-have for that release need passing evidence. Classify remaining defects by impact and state any accepted limitation with an owner and rationale. An unresolved core audio, privacy, access, material translation, or charging defect blocks the affected capability until resolved or explicitly removed from scope with accurate user-facing coverage.
 
 The agreed continuity requirements cannot be marked passed with per-turn controls, periodic restarts, an app-chosen cutoff, a noise-based idle timer, or a short-duration demo. A platform/configuration that cannot support the claimed unattended experience must be fixed or excluded from that support claim. Document the incomplete outcome rather than calling a workaround graceful.
+
+Use [scoring and internal certification](scoring-and-certification.md) to turn these requirements into versioned checks. A failed hard gate cannot be compensated by another metric; missing or unconfigured evidence blocks readiness. The initial evaluator validates submitted evidence and computes readiness, not the actual app behavior or a third-party certification.

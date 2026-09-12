@@ -16,6 +16,8 @@ The ambition is broad. The first product must solve a specific problem well enou
 
 Current confirmed direction: [one-action continuous operation](spec/non-negotiables.md), the [offline passenger/driver conversation](spec/situations/SIT-014-car-conversation.md), and reusable [music/noise conditions](spec/conditions/README.md). Detailed mechanisms and release assignment remain under development.
 
+The UI also requires strict separation of app status from participant text, Light/Dark/Auto appearance, a remembered last view, and a clear way back. See [interaction design](spec/experience/interaction-design.md).
+
 ## How we write this together
 
 We work on one topic at a time and update connected documents when a decision affects them. Drafts are starting points for discussion, not claims that the product or its market has been validated.
@@ -27,5 +29,7 @@ Use stable situation and requirement IDs to connect purpose, behavior, and evide
 ## What exists today
 
 This is a documentation repository with substantive starter drafts and reusable [templates](templates/README.md). It contains no application implementation, selected technology stack, validated pricing, or approved release commitment. The specification map identifies which parts need deeper design before development.
+
+An executable [evaluation prototype](certification/README.md) validates submitted test evidence and reports hard gates, provisional quality scores, and coverage. The rubric is Proposed; there is no app evidence or issued certificate. Its own automated tests exercise evaluation logic, not Trio's product behavior.
 
 **Current writing focus:** develop concrete situations and shared conditions while preserving the agreed non-negotiable experience. Choose the first audience/release separately from defining what the product must do well.

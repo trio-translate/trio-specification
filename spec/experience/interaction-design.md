@@ -48,6 +48,42 @@ Show source and translation as linked content. Distinguish provisional recogniti
 
 Offer a neutral clarification action such as asking the other participant to repeat or explain. Generated explanation or suggested replies are separate from the speaker's words.
 
+## Participant content and app status
+
+Under [DEC-004](../decisions/DEC-004-separate-app-text-from-participant-content.md), participant input fields, transcript/translation panes, live captions, and conversation-message bodies are reserved for participant-derived text. Status prose must not appear inside, over, or in place of those content areas. A different color, spinner, app avatar, or icon in the same area is insufficient separation.
+
+| Content or state | Where it belongs |
+| --- | --- |
+| What a participant actually said/typed, or its translation | The appropriate participant content area |
+| Waiting, listening, reconnecting, timeout, muted speech, or error explanation | A distinct app-status/control region outside participant content |
+| Empty-state guidance or example wording | External field labels/help outside the empty participant text area |
+| Language/speaker labels and provisional/revised state | Separate structural metadata or controls, never text appended to the utterance |
+| Requested explanation or suggested reply | A separate assistant area; no automatic insertion as a participant's message |
+
+Example: if a translation is delayed, keep the prior valid translation clearly associated with its own turn and leave the pending turn's translation empty. Put any necessary processing indication in the app-status region. Never place "One moment" in the translation field and later replace it with the real translation. Keep status communication brief so continuous use does not require reading a stream of app narration.
+
+This separation must survive streaming, correction, recovery, session end, every locale, and both Light and Dark appearance. If a user deliberately adopts a suggested reply, record that action before treating the resulting text as their chosen content. Do not filter a genuinely spoken phrase merely because it matches a status message.
+
+## Appearance modes
+
+Support **Light**, **Dark**, and **Auto** throughout Trio under [DEC-005](../decisions/DEC-005-support-light-dark-and-auto.md). The working Auto behavior follows system appearance and responds to system changes. An explicit Light or Dark choice stays selected even if the system changes. Auto as the initial default is a proposal, not an agreed preference.
+
+Proposed implementation contract: remember the chosen mode locally, apply it before the first content render on return, and support changes without restarting the app or session. If no system preference is available, use a documented stable fallback; selecting Light or Dark must still work. Do not add location access or a custom day/night schedule to implement Auto.
+
+Theme changes preserve participant text/drafts, focus, scroll position, microphone/capture, playback/music state, session identity, and word-inactivity timing. They must not request permission again, create a conversation turn, or trigger a routine interaction. Apply the resolved appearance consistently to all Trio-owned screens, settings, dialogs, statuses, and persistent microphone controls. Native OS surfaces follow their supported platform behavior.
+
+Validate legibility, contrast, focus indicators, participant differentiation, and status/content separation in both appearances, including enlarged text and reduced motion. Exact colors and transition effects remain design work.
+
+## Navigation and view restoration
+
+Remember the last applicable view under [DEC-006](../decisions/DEC-006-remember-view-and-provide-a-way-back.md). Proposed baseline: persist the durable view locally, restore it on return/relaunch offline, and avoid restoring a transient modal as a trapping destination. Use the main conversation/home view when a remembered destination is unavailable or no longer authorized.
+
+Every app-owned secondary screen, modal, overlay, and full-screen mode provides an understandable Back or Close route. A direct entry or root with no history has a stable main-view route. Verify visible/accessibly named controls as well as platform back conventions; hidden gestures alone are insufficient.
+
+Navigation state is separate from session intent and retained conversation data. Navigating within a running session must not stop capture, reset word activity, or hide microphone/stop controls. A cold relaunch can restore the view without restarting capture, rejoining a room, or recreating private content. Back must not secretly mean End session or Delete. Any needed fallback explanation stays in the app-status area.
+
+Test settings, help, corrections, errors, full-screen conversation views, dialogs, direct links, and invalid restored destinations in both appearances, enlarged text, and supported assistive inputs. Temporary drafts and scroll positions need an explicit retention/restoration policy rather than being assumed part of remembering the view.
+
 ## Decisions to resolve with prototypes
 
 Automatic utterance boundaries, speaker/language direction, echo/barge-in handling, view orientation, output defaults under music, correction presentation, timeout duration/counting, and truthful recovery feedback. Hold-to-talk and manual per-turn switching cannot be the required core flow. Evaluate complete unattended conversations as well as short interactions.
