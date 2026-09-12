@@ -16,8 +16,10 @@ from urllib.parse import unquote, urlsplit
 
 if __package__:
     from .certify import load_json, require, unique_strings, validate_catalog
+    from .execution import assess_execution
 else:
     from certify import load_json, require, unique_strings, validate_catalog
+    from execution import assess_execution
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIREMENT = re.compile(r"^## ((?:FR|QR|LQ)-\d{3})\b", re.M)
@@ -221,21 +223,29 @@ def check_repository(root):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["check", "coverage", "preflight"])
+    parser.add_argument("command", choices=["check", "coverage", "preflight", "analyze"])
     parser.add_argument("--mode", choices=["verify", "benchmark", "demo", "release"], default="verify")
     parser.add_argument("--runtime", type=Path, default=ROOT / "harness/runtime.json")
+    parser.add_argument("--evidence", type=Path)
     args = parser.parse_args(argv)
     try:
         if args.command == "check":
             result = check_repository(ROOT)
         elif args.command == "coverage":
             result = coverage_report(ROOT)
+        elif args.command == "analyze":
+            require(args.evidence is not None, "analyze requires --evidence")
+            evidence = load_json(args.evidence)
+            require(isinstance(evidence, dict), "Evidence must be an object")
+            result = assess_execution(evidence.get("execution"))
         else:
             result = preflight(load_json(args.runtime), args.mode)
         print(json.dumps(result, indent=2, ensure_ascii=False))
         if args.command == "check":
             completed = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"], cwd=ROOT, check=False)
             return 0 if completed.returncode == 0 else 1
+        if args.command == "analyze":
+            return {"passed": 0, "failed": 1, "blocked": 2, "invalid": 3}[result["status"]]
         return 2 if args.command == "preflight" else 0
     except (ValueError, OSError, KeyError, TypeError) as exc:
         print(json.dumps({"status": "INVALID_INPUT", "error": str(exc), "executed": False, "certificate": "NOT_ISSUED"}))
