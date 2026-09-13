@@ -41,16 +41,23 @@ Third-party code reaches every app target prebuilt, in every app the owner ships
   roots that pull it and the slice that removes it; a new source dependency cannot
   appear unbanked, and the count of pins that are not prebuilt ratchets to zero. Adding
   a dependency means adding its binary, with a recorded reason in the baseline's history.
-- Binary artefacts live in the repository under Git LFS (their zips), so a fresh
-  checkout is complete without a network resolution step; each artefact ships with the
-  vendor's licence and notice files.
+- The repository commits dependency declarations, versions, and integrity checks
+  (`binaryTarget(url:checksum:)`), not binary archives: artefacts are hosted outside
+  git (the vendor's URL, or release assets of the app repository for a binary we
+  build), each with the vendor's licence and notice files beside its declaration.
+- Where no trusted vendor binary exists, the app repository's binary-first rule
+  (`AGENTS.md`, 2026-09-13) makes verified compiled-output reuse through Xcode's
+  compilation cache the default; building and hosting a binary ourselves needs a
+  documented reason and a measured build-time impact, and a pin covered by verified
+  reuse is recorded as an exception the completion condition accepts.
 
 ## Alternatives and rationale
 
 - **Compile from source and rely on Xcode's compilation cache.** The cache is on already
-  (`Base.xcconfig`) and is the only cross-checkout reuse the app allows; it shortens
-  recompiles but every fresh DerivedData still runs the full dependency graph through
-  the compiler and linker. Rejected as the sole answer.
+  (`Base.xcconfig`) and is the only cross-checkout reuse the app allows. It is the
+  rule's default where no trusted vendor binary exists, accepted only with reuse and
+  invalidation verified in build logs and timings; a package-download cache alone does
+  not count. Rejected as the sole answer because vendor binaries exist for Firebase.
 - **A generated-project binary cache (Tuist).** It automates exactly this, but it
   replaces the hand-maintained Xcode project the app's BuildChecks pin and adds a
   generator to every checkout. Not adopted now; recorded as the fallback if hand-built
@@ -62,11 +69,11 @@ Third-party code reaches every app target prebuilt, in every app the owner ships
 
 ## Consequences
 
-- The repository carries binary artefacts (tens of megabytes per Firebase release;
-  one framework for the gRPC transport) under Git LFS; `git-lfs` joins the Brewfile and
-  a fresh Mac needs it before the first build.
-- A toolchain update becomes a recorded slice that rebuilds the frameworks built without
-  library evolution; the app cannot build against a mismatched binary by accident.
+- The repository stays small: only declarations and checksums are committed; a fresh
+  checkout resolves the hosted artefacts by checksum.
+- A toolchain update becomes a recorded slice that rebuilds any framework we built
+  without library evolution; the app cannot build against a mismatched binary by
+  accident.
 - Clean and cold builds drop the third-party compile entirely; the programme's benchmark
   table gains a checkpoint after the conversion.
 - Firebase and gRPC updates change from editing a version requirement to replacing an
@@ -90,4 +97,4 @@ Supersedes: None. Amends the build-time consequences of
 [DEC-008](DEC-008-swift-6-language-mode-and-executable-quality-ratchets.md).
 Revisit when: SwiftPM or Xcode ships a supported cross-checkout binary cache for package
 dependencies, a vendor stops publishing binaries for a dependency the app needs, or the
-LFS quota becomes a cost the owner wants to avoid.
+hosted artefacts become a cost or availability problem the owner wants to avoid.
