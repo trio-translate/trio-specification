@@ -5,7 +5,7 @@ Source: [DEC-007](../decisions/DEC-007-device-capabilities-and-product-harness.m
 
 ## Capability means an executable path
 
-Trio must be able to integrate useful capabilities of each supported device through suitable platform adapters. Shared application code must permit native extensions when required. This does not require activating every sensor or choosing the newest engine without evidence. Assess customer value, implementation cost, maintenance, and the [non-negotiables](../non-negotiables.md) before adopting a capability.
+Trio must be able to integrate useful capabilities of each supported device through suitable platform adapters. [Purpose-built hardware](hardware.md) is a separate draft study of an optional accessory; it is a proposal, not a supported capability, and no agreed behavior may depend on it. Shared application code must permit native extensions when required. This does not require activating every sensor or choosing the newest engine without evidence. Assess customer value, implementation cost, maintenance, and the [non-negotiables](../non-negotiables.md) before adopting a capability.
 
 | Capability family | Inventory and verify |
 | --- | --- |

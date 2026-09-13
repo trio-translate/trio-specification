@@ -26,6 +26,7 @@ This is the product's central specification. Each subject has one primary home; 
 | Requirements | [Language and AI quality](requirements/language-and-ai-quality.md) | Meaning preservation, uncertainty, evaluation |
 | Technical | [Architecture](technical/architecture.md) | Logical boundaries, constraints, choices to evaluate |
 | Technical | [Device capabilities](technical/device-capabilities.md) | Native integration access, readiness, selection, currency and runtime verification |
+| Technical | [Purpose-built hardware](technical/hardware.md) | Draft hardware design study: capture honesty, endurance, driver-role output, verification support |
 | Technical | [Data model](technical/data-model.md) | Entities, ownership, lifecycles |
 | Technical | [API and events](technical/api-and-events.md) | Contract requirements and event semantics |
 | Technical | [Security and privacy](technical/security-and-privacy.md) | Threats, controls, consent, data handling |

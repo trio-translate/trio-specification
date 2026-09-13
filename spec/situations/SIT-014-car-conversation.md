@@ -57,4 +57,6 @@ The meter alone cannot prove intelligibility. Capture, translation, music handli
 
 Behavior: FR-013 through FR-019 and FR-004/FR-005 in [functional requirements](../requirements/functional.md). Verification proposals: QR-009 through QR-013 in [quality requirements](../requirements/quality.md). See [journey E](../experience/user-journeys.md#journey-e-passenger-operated-car-conversation).
 
+An optional accessory that would serve the driver-listening role without occluding the driver's hearing is explored in [purpose-built hardware](../technical/hardware.md); it is a draft study with no product-owner acceptance, and the phone microphone-plus-speaker setup remains supported regardless of its outcome.
+
 Resolve supported languages/devices/accessories, offline preparation and licensing, automatic driver speech/turn handling, playback routing, music-state detection/manual control, word-timeout duration, resource budgets, and release priority. These do not weaken the confirmed offline, driver-role, or continuous-session requirements.
