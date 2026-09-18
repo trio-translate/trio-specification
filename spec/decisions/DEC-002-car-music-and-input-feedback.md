@@ -1,6 +1,6 @@
 # DEC-002: Specify offline car use and reusable music/noise conditions
 
-Status: Agreed
+Status: Agreed outcomes; mechanisms, thresholds and release assignment remain Draft
 Date: 2026-09-12
 Decision owner: Product owner
 
