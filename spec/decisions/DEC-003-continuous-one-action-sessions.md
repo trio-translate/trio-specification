@@ -1,6 +1,6 @@
 # DEC-003: Require continuous sessions after one start action
 
-Status: Agreed
+Status: Agreed outcomes; mechanisms and thresholds remain Draft
 Date: 2026-09-12
 Decision owner: Product owner
 

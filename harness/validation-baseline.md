@@ -1,9 +1,9 @@
 # Harness validation baseline
 
 Status: Repository tooling verified; product execution untested
-Date: 2026-09-12
+Date: 2026-09-12 (amended 2026-09-19)
 
-The baseline was checked locally on Windows using Python 3.12. The repository workflow selects Python 3.11 on hosted Linux. This record describes what was exercised, not a certificate.
+The baseline was checked locally on Windows using Python 3.12. [harness/README.md](README.md) requires Python 3.11 or newer; there is no hosted CI, so every run is local. This record describes what was exercised, not a certificate.
 
 - The repository checker validates Markdown file/anchor links, requirement definitions, complete planning-map references, situation/condition accounting, agent TOML and skill linkage.
 - Tooling unit tests exercise the evaluator and harness error boundaries, including missing evidence, failed gates, synthetic results, invalid configuration, missing requirement mappings, duplicate IDs, broken links and path escapes.
@@ -13,4 +13,4 @@ The baseline was checked locally on Windows using Python 3.12. The repository wo
 
 There is no physical audio run, app build, live AI conversation, video/audio recording, twelve-hour test, user study, payment experiment, or completed product certification in this baseline. The documentation and initial research support planning those steps.
 
-Re-run `python tools/harness.py check` after changes. Report the exact commit and observed CI result separately; the existence of a workflow file is not evidence of a successful hosted run.
+Re-run `python tools/harness.py check` after changes. Report the exact commit and the observed local result separately; the existence of the check command is not evidence that it was actually run.

@@ -9,8 +9,8 @@ Record choices that change product scope, participant experience, quality, cost,
 | ID | Decision | Status | Date |
 | --- | --- | --- | --- |
 | DEC-001 | [Use Mellom as a starting point and broaden the vision](DEC-001-build-on-mellom.md) | Agreed | 2026-09-12 |
-| DEC-002 | [Offline car use, music, and microphone feedback](DEC-002-car-music-and-input-feedback.md) | Agreed outcomes | 2026-09-12 |
-| DEC-003 | [Continuous sessions after one start action](DEC-003-continuous-one-action-sessions.md) | Agreed outcomes | 2026-09-12 |
+| DEC-002 | [Offline car use, music, and microphone feedback](DEC-002-car-music-and-input-feedback.md) | Agreed outcomes; mechanisms, thresholds and release assignment Draft | 2026-09-12 |
+| DEC-003 | [Continuous sessions after one start action](DEC-003-continuous-one-action-sessions.md) | Agreed outcomes; mechanisms and thresholds Draft | 2026-09-12 |
 | DEC-004 | [Keep app text out of participant content](DEC-004-separate-app-text-from-participant-content.md) | Agreed | 2026-09-12 |
 | DEC-005 | [Support Light, Dark, and Auto appearance](DEC-005-support-light-dark-and-auto.md) | Agreed modes; details Draft | 2026-09-12 |
 | DEC-006 | [Remember the last view and always provide a way back](DEC-006-remember-view-and-provide-a-way-back.md) | Agreed outcomes; details Draft | 2026-09-12 |

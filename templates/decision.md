@@ -25,4 +25,5 @@ Decision owner: [Person or role]
 [Research/source links, acceptance evidence if any, explicit approval evidence if Agreed, and files that must be updated.]
 
 Supersedes: [None or prior decision link.]
+Superseded by: [None, or link to the decision that replaces this one. Set when this record's status becomes Superseded.]
 Revisit when: [Concrete new evidence or changed condition.]
