@@ -1,9 +1,9 @@
 # Harness validation baseline
 
 Status: Repository tooling verified; product execution untested
-Date: 2026-09-12
+Date: 2026-09-12 (amended 2026-09-19)
 
-The baseline was checked locally on Windows using Python 3.12. [harness/README.md](README.md) requires Python 3.11 or newer; there is no hosted CI, so every run is local by decision. This record describes what was exercised, not a certificate.
+The baseline was checked locally on Windows using Python 3.12. [harness/README.md](README.md) requires Python 3.11 or newer; there is no hosted CI, so every run is local. This record describes what was exercised, not a certificate.
 
 - The repository checker validates Markdown file/anchor links, requirement definitions, complete planning-map references, situation/condition accounting, agent TOML and skill linkage.
 - Tooling unit tests exercise the evaluator and harness error boundaries, including missing evidence, failed gates, synthetic results, invalid configuration, missing requirement mappings, duplicate IDs, broken links and path escapes.
