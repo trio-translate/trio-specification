@@ -1,0 +1,19 @@
+name: Temporary light-only specification workspace
+on:
+  push:
+    branches: [2160-light-only]
+    paths: [.github/workflows/light-only-workspace.yml]
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: git archive --format=tar HEAD | gzip > "$RUNNER_TEMP/spec-source.tar.gz"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: light-only-spec-source
+          path: ${{ runner.temp }}/spec-source.tar.gz
+          retention-days: 1
