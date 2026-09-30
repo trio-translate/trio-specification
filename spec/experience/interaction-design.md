@@ -62,17 +62,15 @@ Under [DEC-004](../decisions/DEC-004-separate-app-text-from-participant-content.
 
 Example: if a translation is delayed, keep the prior valid translation clearly associated with its own turn and leave the pending turn's translation empty. Put any necessary processing indication in the app-status region. Never place "One moment" in the translation field and later replace it with the real translation. Keep status communication brief so continuous use does not require reading a stream of app narration.
 
-This separation must survive streaming, correction, recovery, session end, every locale, and both Light and Dark appearance. If a user deliberately adopts a suggested reply, record that action before treating the resulting text as their chosen content. Do not filter a genuinely spoken phrase merely because it matches a status message.
+This separation must survive streaming, correction, recovery, session end, every locale, and the light presentation. If a user deliberately adopts a suggested reply, record that action before treating the resulting text as their chosen content. Do not filter a genuinely spoken phrase merely because it matches a status message.
 
-## Appearance modes
+## Light-only appearance
 
-Support **Light**, **Dark**, and **Auto** throughout Trio under [DEC-005](../decisions/DEC-005-support-light-dark-and-auto.md). The working Auto behavior follows system appearance and responds to system changes. An explicit Light or Dark choice stays selected even if the system changes. Auto as the initial default is a proposal, not an agreed preference.
+Use one light appearance throughout Trio under [DEC-010](../decisions/DEC-010-light-only-appearance.md), from the first render through every app-owned screen, sheet, dialog and extension. The system appearance and any legacy saved theme choice do not select another Trio appearance. There is no appearance control or theme preference to store or synchronize.
 
-Proposed implementation contract: remember the chosen mode locally, apply it before the first content render on return, and support changes without restarting the app or session. If no system preference is available, use a documented stable fallback; selecting Light or Dark must still work. Do not add location access or a custom day/night schedule to implement Auto.
+Do not maintain alternate palettes/assets, theme switching, theme-specific previews or a duplicated appearance test matrix. A single opt-out regression may verify that incompatible system/legacy preferences leave the app light. Native OS surfaces outside Trio's control follow their supported platform behavior.
 
-Theme changes preserve participant text/drafts, focus, scroll position, microphone/capture, playback/music state, session identity, and word-inactivity timing. They must not request permission again, create a conversation turn, or trigger a routine interaction. Apply the resolved appearance consistently to all Trio-owned screens, settings, dialogs, statuses, and persistent microphone controls. Native OS surfaces follow their supported platform behavior.
-
-Validate legibility, contrast, focus indicators, participant differentiation, and status/content separation in both appearances, including enlarged text and reduced motion. Exact colors and transition effects remain design work.
+Validate legibility, contrast, focus indicators, participant differentiation, microphone feedback and status/content separation in the light appearance, including enlarged text and reduced motion. Media contrast backings are not a second theme. Appearance handling must not alter participant text/drafts, focus, scroll position, capture, playback/music state, session identity or word-inactivity timing.
 
 ## Navigation and view restoration
 
@@ -82,7 +80,7 @@ Every app-owned secondary screen, modal, overlay, and full-screen mode provides 
 
 Navigation state is separate from session intent and retained conversation data. Navigating within a running session must not stop capture, reset word activity, or hide microphone/stop controls. A cold relaunch can restore the view without restarting capture, rejoining a room, or recreating private content. Back must not secretly mean End session or Delete. Any needed fallback explanation stays in the app-status area.
 
-Test settings, help, corrections, errors, full-screen conversation views, dialogs, direct links, and invalid restored destinations in both appearances, enlarged text, and supported assistive inputs. Temporary drafts and scroll positions need an explicit retention/restoration policy rather than being assumed part of remembering the view.
+Test settings, help, corrections, errors, full-screen conversation views, dialogs, direct links, and invalid restored destinations in the light appearance, enlarged text, and supported assistive inputs. Temporary drafts and scroll positions need an explicit retention/restoration policy rather than being assumed part of remembering the view.
 
 ## Decisions to resolve with prototypes
 

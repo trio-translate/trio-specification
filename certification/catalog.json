@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": "0.2.0",
+  "catalog_version": "0.3.0",
   "policy_status": "proposed",
   "minimum_score": null,
   "profiles": {
@@ -281,7 +281,7 @@
     },
     {
       "id": "CERT-011",
-      "title": "Light Dark Auto work without session interruption",
+      "title": "One light appearance without an appearance control or session interruption",
       "requirements": [
         "FR-021",
         "QR-007"
@@ -295,9 +295,8 @@
       ],
       "cases": [
         "light",
-        "dark",
-        "auto_system_change",
-        "explicit_override",
+        "no_appearance_control",
+        "system_and_legacy_preferences_ignored",
         "offline_relaunch",
         "session_preserved",
         "screen_inventory"
@@ -511,7 +510,7 @@
       ],
       "cases": [
         "assistive_journey",
-        "both_appearances",
+        "light_appearance",
         "both_participant_roles"
       ],
       "unit": "review_score",
