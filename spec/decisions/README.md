@@ -12,11 +12,12 @@ Record choices that change product scope, participant experience, quality, cost,
 | DEC-002 | [Offline car use, music, and microphone feedback](DEC-002-car-music-and-input-feedback.md) | Agreed outcomes; mechanisms, thresholds and release assignment Draft | 2026-09-12 |
 | DEC-003 | [Continuous sessions after one start action](DEC-003-continuous-one-action-sessions.md) | Agreed outcomes; mechanisms and thresholds Draft | 2026-09-12 |
 | DEC-004 | [Keep app text out of participant content](DEC-004-separate-app-text-from-participant-content.md) | Agreed | 2026-09-12 |
-| DEC-005 | [Support Light, Dark, and Auto appearance](DEC-005-support-light-dark-and-auto.md) | Agreed modes; details Draft | 2026-09-12 |
+| DEC-005 | [Previous appearance-mode decision](DEC-005-support-light-dark-and-auto.md) | Superseded by DEC-010 | 2026-09-12 |
 | DEC-006 | [Remember the last view and always provide a way back](DEC-006-remember-view-and-provide-a-way-back.md) | Agreed outcomes; details Draft | 2026-09-12 |
 | DEC-007 | [Device capabilities and a complete product harness](DEC-007-device-capabilities-and-product-harness.md) | Agreed direction; details Draft | 2026-09-12 |
 | DEC-008 | [Adopt Swift 6 language mode and executable quality ratchets for the Trio app](DEC-008-swift-6-language-mode-and-executable-quality-ratchets.md) | Agreed direction (amended 2026-09-13); slice details Draft | 2026-09-12 |
 | DEC-009 | [Ship third-party dependencies prebuilt in every app](DEC-009-prebuilt-third-party-dependencies.md) | Agreed direction; slice details Draft | 2026-09-13 |
+| DEC-010 | [Light-only appearance](DEC-010-light-only-appearance.md) | Agreed; supersedes DEC-005 | 2026-09-30 |
 
 Core behavior and the relevance of the car situation have been agreed. The initial audience, release assignment, price, platform, language inventory, mechanisms, and technology stack remain open.
 

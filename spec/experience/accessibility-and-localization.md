@@ -14,7 +14,7 @@ Status: Draft
 - Support situation-specific participation: a driver/listener cannot rely on visual fallback or the microphone meter. The passenger operates the screen; the driver must not need to inspect it.
 - Test one-action continuous sessions with assistive technology and enlarged text; periodic focus-stealing prompts or repeated turn controls do not meet the core contract.
 - Keep app status in a separate accessible region from participant input/transcripts/translations. Neither an icon nor a screen-reader prefix makes app-authored text acceptable inside a participant content field. Status announcements must not become transcript items or conversation playback.
-- Support Light, Dark, and Auto consistently. Test contrast, focus, microphone feedback, enlarged text, and status/content separation in both resolved appearances; theme changes preserve the active session and current focus.
+- Support one light appearance under DEC-010. Test contrast, focus, microphone feedback, enlarged text and status/content separation once in that appearance. Preserve the active session and current focus; do not add an appearance selector or duplicate the test matrix for another theme.
 - Provide named, discoverable back/close or main-view controls for every applicable screen/overlay; test restored/direct-entry states without history and avoid focus traps. Restoring a view must not restart capture or expose discarded conversation content.
 
 ## Language coverage is a product contract
