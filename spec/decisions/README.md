@@ -18,6 +18,7 @@ Record choices that change product scope, participant experience, quality, cost,
 | DEC-008 | [Adopt Swift 6 language mode and executable quality ratchets for the Trio app](DEC-008-swift-6-language-mode-and-executable-quality-ratchets.md) | Agreed direction (amended 2026-09-13); slice details Draft | 2026-09-12 |
 | DEC-009 | [Ship third-party dependencies prebuilt in every app](DEC-009-prebuilt-third-party-dependencies.md) | Agreed direction; slice details Draft | 2026-09-13 |
 | DEC-010 | [Light-only appearance](DEC-010-light-only-appearance.md) | Agreed; supersedes DEC-005 | 2026-09-30 |
+| DEC-011 | [Use a versioned deterministic semantic engine contract](DEC-011-versioned-deterministic-engine-contract.md) | Proposed | 2026-10-02 |
 
 Core behavior and the relevance of the car situation have been agreed. The initial audience, release assignment, price, platform, language inventory, mechanisms, and technology stack remain open.
 

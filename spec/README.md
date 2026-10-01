@@ -28,6 +28,7 @@ This is the product's central specification. Each subject has one primary home; 
 | Technical | [Device capabilities](technical/device-capabilities.md) | Native integration access, readiness, selection, currency and runtime verification |
 | Technical | [Data model](technical/data-model.md) | Entities, ownership, lifecycles |
 | Technical | [API and events](technical/api-and-events.md) | Contract requirements and event semantics |
+| Technical | [Semantic engine contract](technical/engine/README.md) | Proposed versioned event format, deterministic reducer semantics, replay fixtures, and platform conformance |
 | Technical | [Security and privacy](technical/security-and-privacy.md) | Threats, controls, consent, data handling |
 | Business | [Business model](business/business-model.md) | Payer, packaging, unit economics, pricing experiments |
 | Business | [Commercialization](business/commercialization.md) | Customer evidence, paid pilot, economics and launch packet |
