@@ -84,6 +84,17 @@ This list is Proposed, not an assertion that every event is already implemented.
 
 A platform implementation conforms only when it can replay the canonical fixtures and match the expected semantic state, including duplicate, out-of-order, stale-revision, cancellation, recovery, and ended-session cases.
 
+The repository has a deliberately small executable seed gate for behavior already stated by this proposal:
+
+- `basic-turn.jsonl`: successful baseline replay;
+- `duplicate-delivery.jsonl`: exact re-delivery is idempotent;
+- `gap-recovery.jsonl`: a future sequence is not applied speculatively and converges after the missing event arrives;
+- `cancellation-late-output.jsonl`: late output for a canceled operation/revision does not become participant-visible.
+
+Each JSONL fixture has a paired `.expected.json` semantic-state projection. Those expected files are conformance evidence, not a required byte-for-byte serialization format for native engine internals. The gap fixture deliberately redelivers the future event after the gap closes, so implementations remain free to buffer it or reject/defer it as allowed by [the reducer rules](state-machine.md).
+
+The seed is part of `python tools/harness.py check` because that command runs the repository's unittest suite. For the focused gate alone, run `python -m unittest tests.test_engine_conformance`. The gate intentionally leaves event-specific payload schemas generic until product behavior is sufficiently settled.
+
 Cross-platform verification should therefore use the same fixture:
 
 ```text

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "session-example",
+  "lastAppliedSequence": 5,
+  "turns": {
+    "turn-001": {
+      "operationId": "op-001",
+      "participantId": "participant-a",
+      "revision": 0,
+      "status": "completed",
+      "recognition": {
+        "language": "en",
+        "text": "Hello."
+      },
+      "translation": {
+        "targetLanguage": "pt-BR",
+        "text": "Olá."
+      }
+    }
+  }
+}
