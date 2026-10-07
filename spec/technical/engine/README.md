@@ -93,13 +93,7 @@ The repository has a deliberately small executable seed gate for behavior alread
 
 Each JSONL fixture has a paired `.expected.json` semantic-state projection. Those expected files are conformance evidence, not a required byte-for-byte serialization format for native engine internals. The gap fixture deliberately redelivers the future event after the gap closes, so implementations remain free to buffer it or reject/defer it as allowed by [the reducer rules](state-machine.md).
 
-Run the seed directly with:
-
-```sh
-python tools/engine_conformance.py
-```
-
-It is also part of `python tools/harness.py check` because that command runs the repository's unittest suite. The gate intentionally leaves event-specific payload schemas generic until product behavior is sufficiently settled.
+The seed is part of `python tools/harness.py check` because that command runs the repository's unittest suite. For the focused gate alone, run `python -m unittest tests.test_engine_conformance`. The gate intentionally leaves event-specific payload schemas generic until product behavior is sufficiently settled.
 
 Cross-platform verification should therefore use the same fixture:
 
