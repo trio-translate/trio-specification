@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Trio semantic engine event envelope v1",
+  "description": "Proposed platform-independent event envelope for deterministic Trio semantic replay.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "eventId",
+    "sessionId",
+    "sequence",
+    "type",
+    "occurredAt",
+    "producer",
+    "payload"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "eventId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "sessionId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "type": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z][a-z0-9_-]*)+$"
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "producer": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "operationId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "turnId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "participantId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "payload": {
+      "type": "object"
+    }
+  }
+}

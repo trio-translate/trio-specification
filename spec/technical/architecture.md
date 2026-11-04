@@ -15,12 +15,15 @@ Follow the [device capability contract](device-capabilities.md): retain integrat
 | Boundary | Responsibilities |
 | --- | --- |
 | Participant client | One-action session start, truthful persistent audio/input state, automatic capture coordination, accessible presentation, local stop, word-activity tracking and interruption recovery |
+| Semantic engine | Deterministically reduce versioned Trio events into platform-neutral session/turn state and conform to shared replay fixtures |
 | Trusted application service, if cloud processing is selected | Session authorization, request validation, usage/entitlements, cancellation coordination, provider credentials |
 | Language processing adapter | Local/cloud recognition, translation, speech generation, automatic utterance handling, bounded per-operation timeouts, capability mapping, normalized word/result events |
 | Session coordinator | User intent independent from connection/engine lifetimes; automatic renewal/recovery; word-inactivity policy; capability-specific state |
 | Local resources | Offline readiness of language/voice resources, version/integrity checks, local authorization and resource budgets |
 | Persistence, only for agreed needs | Minimal session metadata, account/entitlement state, optional retained content under explicit policy |
 | Operations | Content-free diagnostics, usage/cost reconciliation, alerts, release controls |
+
+[DEC-011](../decisions/DEC-011-versioned-deterministic-engine-contract.md) proposes that the semantic engine be a versioned contract plus deterministic reducer semantics, not a mandatory shared compiled runtime. Native clients may therefore implement the same engine contract in their platform language while sharing schemas and replay fixtures. Device APIs, presentation, and model/provider adapters remain outside the pure semantic reducer.
 
 SIT-014 requires recognition, translation, required TTS, session/word timing, and baseline music/input feedback to work without runtime network dependencies. Other situations may use cloud processing if they meet the same continuity and data-control requirements. A cloud-only pipeline cannot be labeled ready for the car situation. Do not implement vendor abstraction beyond realistic substitution and testing needs.
 

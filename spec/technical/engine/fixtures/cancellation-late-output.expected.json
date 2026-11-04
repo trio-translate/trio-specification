@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "session-cancel",
+  "lastAppliedSequence": 4,
+  "turns": {
+    "turn-cancel": {
+      "operationId": "op-cancel",
+      "participantId": "participant-a",
+      "revision": 0,
+      "status": "canceled",
+      "recognition": null,
+      "translation": null
+    }
+  }
+}

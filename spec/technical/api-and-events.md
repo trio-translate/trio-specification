@@ -2,7 +2,7 @@
 
 Status: Draft
 
-This document defines contract requirements. Protocol, route names, JSON schemas, audio formats, authentication format, and versioning are intentionally not fixed yet.
+This document defines contract requirements. Network protocol, route names, audio formats, authentication format, and service transport versioning are intentionally not fixed yet. [DEC-011](../decisions/DEC-011-versioned-deterministic-engine-contract.md) separately proposes a JSON/JSONL semantic engine event contract for deterministic client behavior; that proposal does not choose a network transport.
 
 ## Logical operations
 
@@ -25,6 +25,8 @@ Operations needed in SIT-014 must be executable locally without an HTTP/server d
 
 Candidate events include session state changes, turn accepted, recognition updated/finalized, translation ready/failed, turn revised/canceled, and usage updated. Each applicable event needs a unique ID, session ID, operation/turn ID, revision, sequence, type, and schema version. Define timestamp purpose; timestamps alone do not determine ordering.
 
+The proposed [semantic engine contract](engine/README.md) makes these ordering/deduplication rules executable across native clients and provides an initial machine-readable [event envelope](engine/event.schema.json). Event-specific payload schemas remain to be added as the related behavior is settled.
+
 Specify delivery guarantees, duplicate handling, resume cursor behavior, retention, and what happens when a client misses the resume window. Clients must tolerate duplicates and out-of-order events without duplicate speech or regression to an old revision.
 
 Define separate events/state for logical start/pause/end and end reason, component availability/recovery, actual input route, music/TTS policy, and qualifying word activity. A recognition event needs stable identity/provenance and timing so interim/final duplicates, TTS echo, and identified lyrics cannot silently extend inactivity. Word-observer health is separate from detected words. These signals can be local; do not transmit private content simply to support a timer or input meter.
@@ -41,4 +43,4 @@ Keep app status/error codes and localized app copy in typed fields distinct from
 
 ## Before implementation
 
-Choose transport and define concrete request/response/event schemas, authentication/authorization, payload and rate limits, deadlines, backpressure, idempotency-key lifetime, cancellation races, compatibility, and examples for successful and failed flows. Publish machine-readable contracts only after these choices are made. Verify contracts against the actual service rather than treating an example payload as implemented behavior.
+Choose service transport and define concrete request/response schemas, authentication/authorization, payload and rate limits, deadlines, backpressure, idempotency-key lifetime, cancellation races, compatibility, and examples for successful and failed flows. The semantic-engine envelope/reducer proposal does not remove those service-contract decisions. Verify contracts against the actual service and client conformance corpus rather than treating an example payload as implemented behavior.

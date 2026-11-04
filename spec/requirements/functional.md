@@ -200,19 +200,19 @@ Reserve participant input, transcripts, translations, captions, and conversation
 
 Acceptance: inject recognition/translation delays, reconnects, empty input, no detected words, music-muted output, errors, correction, and session end. At no point may app copy such as "One moment" appear in participant fields or as a conversation turn, enter source/translation payloads, or be copied, retained, summarized, searched, replayed, or used as participant context. Missing output may remain empty while separate status explains it. Preserve valid earlier content without implying it belongs to the pending turn.
 
-Verify visual structure and accessible reading in both appearances and supported locales, including streaming updates and app-owned dialogs. App-status announcements are separate from participant transcript reading. As a positive control, genuinely spoken/typed "one moment" remains valid participant content; implement origin separation rather than phrase suppression.
+Verify visual structure and accessible reading in the light appearance and supported locales, including streaming updates and app-owned dialogs. App-status announcements are separate from participant transcript reading. As a positive control, genuinely spoken/typed "one moment" remains valid participant content; implement origin separation rather than phrase suppression.
 
 Dependencies: [interaction placement rules](../experience/interaction-design.md#participant-content-and-app-status), typed content/status provenance, LQ-002, accessibility review, and future output/export paths. Generated reply adoption, if supported, requires a deliberate user action before it becomes chosen participant content.
 
-## FR-021 — Support Light, Dark, and Auto appearance
+## FR-021 — Use one light appearance
 
-Status: Agreed three-mode support; Auto/default/persistence details Draft. Scope: All Trio-owned screens and modes. Source: DEC-005.
+Status: Agreed. Scope: All Trio-owned screens, presentations, extensions and modes. Source: DEC-010, superseding DEC-005 on 2026-09-30.
 
-Offer Light, Dark, and Auto. Working behavior: Auto follows the system appearance, explicit Light/Dark overrides it, and the choice is remembered locally without an account or network. The initial default and unavailable-system-preference fallback remain proposed design choices.
+Use one light appearance from the first render. Do not offer or persist an appearance choice, follow system theme changes, or maintain alternate theme assets, palettes, previews or a duplicated appearance test matrix. A legacy saved theme value has no effect.
 
-Acceptance: switch all three modes, change the system appearance while Auto is selected, verify explicit modes resist system changes, and relaunch offline with a saved selection. Changes affect all app-owned screens/dialogs and preserve readable content, status separation, stop controls, and the microphone indicator. During an active speech/translation session, preserve focus, drafts, scroll, capture/playback, session identity, and the word-inactivity clock without a restart or another permission prompt.
+Acceptance: launch and relaunch offline, navigate through the app-owned screen/dialog inventory and return through Back/Close. The UI remains light, readable and usable without an appearance control. One opt-out regression may verify that incompatible system/legacy preferences cannot change the appearance; it is not a second supported rendering matrix. Preserve status separation, stop controls, microphone feedback, focus, drafts, scroll, capture/playback, session identity and the word-inactivity clock without a restart or another permission prompt.
 
-Dependencies: [appearance contract](../experience/interaction-design.md#appearance-modes), QR-007 accessibility criteria, supported-platform appearance signals and local preference storage. Visual palette and implementation remain unselected.
+Dependencies: [light-only contract](../experience/interaction-design.md#light-only-appearance), QR-007 accessibility criteria and supported platform presentation boundaries. No theme preference storage or switching service is required.
 
 ## FR-022 — Remember the last view
 

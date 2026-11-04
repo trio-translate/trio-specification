@@ -16,7 +16,7 @@ The ambition is broad. The first product must solve a specific problem well enou
 
 Current confirmed direction: [one-action continuous operation](spec/non-negotiables.md), the [offline passenger/driver conversation](spec/situations/SIT-014-car-conversation.md), and reusable [music/noise conditions](spec/conditions/README.md). Detailed mechanisms and release assignment remain under development.
 
-The UI also requires strict separation of app status from participant text, Light/Dark/Auto appearance, a remembered last view, and a clear way back. See [interaction design](spec/experience/interaction-design.md).
+The UI also requires strict separation of app status from participant text, light-only appearance, a remembered last view, and a clear way back. See [interaction design](spec/experience/interaction-design.md).
 
 ## How we write this together
 

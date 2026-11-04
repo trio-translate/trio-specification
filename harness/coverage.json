@@ -365,9 +365,7 @@
       "music_and_noise"
     ],
     "appearance": [
-      "light",
-      "dark",
-      "auto"
+      "light"
     ],
     "network": [
       "offline_cold_start",

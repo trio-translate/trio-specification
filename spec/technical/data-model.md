@@ -24,7 +24,6 @@ This is a conceptual model, not a database schema. An entity may exist only in m
 | Word activity | Session, last qualifying word time/event identity, observer health, predefined timeout, accrued idle time | How are provisional results, duplicates, lyrics, TTS and unknown observation handled? |
 | Recovery state | Capability, fault/retry state, connection generation, lost interval, bounded queue metadata | How does recovery preserve session intent, privacy, ordering, and truthful delivery? |
 | App presentation state | Status/error code, associated operation if any, localized display copy | Separate from participant source/translation payloads; never a fabricated turn |
-| Appearance preference | Selected Light/Dark/Auto mode and resolved Light/Dark scheme | Proposed local persistence; system changes affect Auto without changing session state |
 | Navigation preference | Last applicable durable view identifier and supported view options | Local restoration with a safe fallback; no implicit capture restart, private history retention, or room authorization |
 
 ## Invariants to preserve
@@ -41,7 +40,7 @@ This is a conceptual model, not a database schema. An entity may exist only in m
 - Offline-ready is assessed per actual required recognition/translation/voice capability, not one generic connectivity flag.
 - Continuous operation does not imply twelve hours of retained audio or transcript. Queues, recognition context, and diagnostics require explicit bounded lifetimes.
 - Participant-derived text and app-generated status/assistance have explicit distinct provenance. A status can reference a turn without being its source/translation content or entering participant history, copying, summary, recognition context, or playback. Deliberate user adoption of a suggested reply must be recorded before it becomes chosen participant text.
-- Appearance state is independent of session generations, capture, utterances, output, and word activity. Changing the theme cannot create a turn, reset inactivity, or restart audio.
+- Light-only appearance (DEC-010) has no persisted preference or session state. Legacy theme values are ignored and must not create a turn, reset inactivity or restart audio.
 
 ## Retention proposal
 
